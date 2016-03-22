@@ -1,0 +1,1 @@
+const char *version_str = "arachne-pnr 0.1+${COMMIT_COUNT}+${LOCAL_CHANGED} (git sha1 ${GIT_REV}, ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION})";

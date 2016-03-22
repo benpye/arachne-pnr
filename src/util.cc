@@ -139,12 +139,12 @@ std::string proc_self_dirname()
 std::string proc_self_dirname()
 {
         int i = 0;
-#  ifdef __MINGW32__
-        char longpath[MAX_PATH + 1];
-        char shortpath[MAX_PATH + 1];
-#  else
+#  if defined(_WIN64)
         WCHAR longpath[MAX_PATH + 1];
         TCHAR shortpath[MAX_PATH + 1];
+#  else
+        char longpath[MAX_PATH + 1];
+        char shortpath[MAX_PATH + 1];
 #  endif
         if (!GetModuleFileName(0, longpath, MAX_PATH+1))
                 fatal("GetModuleFileName() failed.");
